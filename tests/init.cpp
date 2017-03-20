@@ -72,6 +72,29 @@ SCENARIO("matrix sum", "[sum]") {
 		
 	
 }
+
+SCENARIO("matrix Proizv", "[Pro]") {
+	Matrix matrix(2,2);
+	Matrix matrix1(2,2);
+	Matrix Pro(2,2);
+	
+	ofstream test1("test1.txt");
+	test1 << "1 2 3 4";
+	test1.close();
+	
+	matrix.fill("test1.txt");
+	matrix1.fill("test1.txt");
+	//ofstream sumfile("sumfile.txt");
+	//sumfile << "2 4 6 8";
+	//sum.fill("sumfile.txt");
+	//sumfile.close();
+	REQUIRE(matrix[0][0] * matrix1[0][0] + matrix[0][1] * matrix[1][0] == 7);
+	REQUIRE(matrix[0][0] * matrix1[1][0] + matrix[0][1] * matrix[1][1] == 10);
+	REQUIRE(matrix[0][1] * matrix1[0][0] + matrix[1][1] * matrix[0][1] == 15);
+	REQUIRE(matrix[0][1] * matrix1[1][0] + matrix[1][1] * matrix[1][1] == 22);
+	
+	
+}
 	
 	
 	
