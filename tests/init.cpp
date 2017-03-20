@@ -88,10 +88,11 @@ SCENARIO("matrix Proizv", "[Pro]") {
 	//sumfile << "2 4 6 8";
 	//sum.fill("sumfile.txt");
 	//sumfile.close();
-	REQUIRE(matrix[0][0] * matrix1[0][0] + matrix[0][1] * matrix[1][0] == 7);
-	REQUIRE(matrix[0][0] * matrix1[1][0] + matrix[0][1] * matrix[1][1] == 10);
-	REQUIRE(matrix[0][1] * matrix1[0][0] + matrix[1][1] * matrix[0][1] == 15);
-	REQUIRE(matrix[0][1] * matrix1[1][0] + matrix[1][1] * matrix[1][1] == 22);
+	REQUIRE(matrix.Element(0,0) * matrix1.Element(0,0) + matrix.Element(1,0) * matrix1.ELement(0,1) == 7);
+	REQUIRE(matrix.Element(0,0) * matrix1.Element(1,0) + matrix.Element(1,0) * matrix1.ELement(1,1) == 10);
+	REQUIRE(matrix.Element(0,1) * matrix1.Element(0,0) + matrix.Element(1,1) * matrix1.ELement(0,1) == 15);
+	REQUIRE(matrix.Element(0,1) * matrix1.Element(1,0) + matrix.Element(1,1) * matrix1.ELement(1,1) == 7);
+	
 	
 	
 }
