@@ -1,13 +1,16 @@
-#include <iostream>
+using namespace std;
 
-class matrix_t final
-{
+class Matrix {
+
 private:
-    unsigned int rows_;
-    unsigned int columns_;
-    int** elements_;
+	int row, col, **mas;
 public:
-    matrix_t() noexcept;
-    auto rows() -> unsigned int;
-    auto columns() -> unsigned int;
+	Matrix(int length = 4);
+	Matrix(int, int);
+	Matrix(const Matrix&);
+	~Matrix();
+	void fill(const char*);
+	void show() const;
+	Matrix operator+(const Matrix&) const;
+	Matrix operator*(const Matrix&) const;
 };
