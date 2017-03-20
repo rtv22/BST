@@ -12,7 +12,7 @@ public:
 	Matrix(int, int);
 	Matrix(const Matrix&);
 	
-        int Element(int i, int j)ж
+        int Element(int i, int j);
 	~Matrix();
 	void fill(const char*);
 	void show() const;
