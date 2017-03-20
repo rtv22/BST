@@ -59,7 +59,7 @@ SCENARIO("matrix sum", "[sum]") {
 	matrix1.fill("test1.txt");
 	ofstream sumfile("sumfile.txt");
 	sumfile << "2 4 6 8";
-	sum.fill("sumfile.txt")
+	sum.fill("sumfile.txt");
 	REQUIRE(sum == matrix + matrix1);
 }
 	
