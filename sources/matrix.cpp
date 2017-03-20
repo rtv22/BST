@@ -93,10 +93,10 @@ Matrix Matrix::operator*(const Matrix& a) const {
 	return help;
 }
 
-void Matrix::rows() {
+int Matrix::rows() {
 	return row;
 }
 
-void Matrix::columns() {
+int Matrix::columns() {
 	return col;
 }
