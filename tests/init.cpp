@@ -65,7 +65,11 @@ SCENARIO("matrix sum", "[sum]") {
 	sumfile << "2 4 6 8";
 	sum.fill("sumfile.txt");
 	sumfile.close();
-	REQUIRE(sum == matrix + matrix1);
+	for (int i=0;i<matrix.rows(); i++) {
+		for (int j = 0; j<matrix.columns();j++) {
+			REQUIRE(sum.Element(i,j) == matrix.Element(i,j) + matrix1.Element(i,j));
+		}
+	}
 }
 	
 	
