@@ -109,4 +109,25 @@ int Matrix::Element(int i, int j)
                 cout << "Error: 1";
         }
 
+bool Matrix::operator==(const Matrix& m) const
+{
+	if (row != m.row || column != m.column)
+	{
+		return false;
+	}
+	else
+	{
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+		
+				if (mas[i][j] != m.mas[i][j])
+				{
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
 
