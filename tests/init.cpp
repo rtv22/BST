@@ -61,15 +61,16 @@ SCENARIO("matrix sum", "[sum]") {
 	
 	matrix.fill("test1.txt");
 	matrix1.fill("test1.txt");
-	ofstream sumfile("sumfile.txt");
-	sumfile << "2 4 6 8";
-	sum.fill("sumfile.txt");
-	sumfile.close();
-	for (int i=0;i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(sum.Element(i,j) == matrix.Element(i,j) + matrix1.Element(i,j));
-		}
-	}
+	//ofstream sumfile("sumfile.txt");
+	//sumfile << "2 4 6 8";
+	//sum.fill("sumfile.txt");
+	//sumfile.close();
+	REQUIRE(matrix.Element(0,0) + matrix1.Element(0,0) == 2);
+	REQUIRE(matrix.Element(0,1) + matrix1.Element(0,1) == 4);
+	REQUIRE(matrix.Element(1,0) + matrix1.Element(1,0) == 6);
+	REQUIRE(matrix.Element(1,1) + matrix1.Element(1,1) == 8);
+		
+	
 }
 	
 	
