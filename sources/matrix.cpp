@@ -20,6 +20,9 @@ Matrix::Matrix(int r, int c) {
 	mas = new int*[row];
 	for (int i = 0; i < row; i++) {
 		mas[i] = new int[col];
+		for (int j = 0; j < col; j++) {
+			mas[i][j] = 0;
+		}
 	}
 }
 
