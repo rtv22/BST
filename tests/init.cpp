@@ -8,7 +8,7 @@ SCENARIO("matrix init without parametrs", "[init wp]") {
 	
 	for (int i=0;i<matrix.rows(); i++) {
 		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix[i][j] == 0);
+			REQUIRE(matrix.Element(i,j) == 0);
 		}
 	}
 }
@@ -20,7 +20,7 @@ SCENARIO("matrix init with parametrs", "[init withp]") {
 	
 	for (int i=0;i<matrix.rows(); i++) {
 		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix[i][j] == 0);
+			REQUIRE(matrix.Element(i,j) == 0);
 		}
 	}
 }
@@ -33,7 +33,7 @@ SCENARIO("matrix init copy", "[init copy]") {
 	
 	for (int i=0;i<matrix.rows(); i++) {
 		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix[i][j] == matrix1[i][j]);
+			REQUIRE(matrix.Element(i,j) == matrix1.Element(i,j));
 		}
 	}
 }
@@ -44,10 +44,10 @@ SCENARIO("matrix fill", "[fill]") {
 	test1 << "1 2 3 4";
 	test1.close();
 	matrix.fill("test1.txt");
-	REQUIRE(matrix[0][0] == 1);
-	REQUIRE(matrix[0][1] == 2);
-	REQUIRE(matrix[1][0] == 3);
-	REQUIRE(matrix[1][1] == 4);
+	REQUIRE(matrix.Element(0,0) == 1);
+	REQUIRE(matrix.Element(0,1) == 2);
+	REQUIRE(matrix.Element(1,0) == 3);
+	REQUIRE(matrix.Element(1,1) == 4);
 }
 
 SCENARIO("matrix sum", "[sum]") {
