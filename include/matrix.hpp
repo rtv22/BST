@@ -18,4 +18,5 @@ public:
 	int columns();
 	Matrix operator+(const Matrix&) const;
 	Matrix operator*(const Matrix&) const;
+	int operator[](int) const;
 };
