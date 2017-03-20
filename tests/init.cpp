@@ -55,11 +55,16 @@ SCENARIO("matrix sum", "[sum]") {
 	Matrix matrix1(2,2);
 	Matrix sum(2,2);
 	
+	ofstream test1("test1.txt");
+	test1 << "1 2 3 4";
+	test1.close();
+	
 	matrix.fill("test1.txt");
 	matrix1.fill("test1.txt");
 	ofstream sumfile("sumfile.txt");
 	sumfile << "2 4 6 8";
 	sum.fill("sumfile.txt");
+	sumfile.close;
 	REQUIRE(sum == matrix + matrix1);
 }
 	
