@@ -2,7 +2,7 @@
 #include <catch.hpp>
 
 SCENARIO("matrix init without parametrs", "[init wp]") {
-	matrix_t matrix;
-	REQUIRE(matrix.rows() == 0);
-	REQUIRE(matrix.columns() == 0);
+	Matrix matrix;
+	REQUIRE(matrix.rows() == 4);
+	REQUIRE(matrix.columns() == 4);
 }
