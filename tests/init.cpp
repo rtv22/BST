@@ -49,9 +49,9 @@ SCENARIO("matrix fill", "[fill]") {
 	REQUIRE(matrix[1][1] == 4);
 }
 
-SCENARIO("matrix sum", "[sum]") {
+/*SCENARIO("matrix sum", "[sum]") {
 	Matrix matrix(2,2);
-	Matrix matrix1(2,2);
+	Matrix matrix1(2,2);*/
 	
 
 
