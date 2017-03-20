@@ -101,7 +101,7 @@ int Matrix::columns() {
 	return col;
 }
 
-int Element(int i, int j)
+int Matrix::Element(int i, int j)
         {
             if (i<row && j<col)
                 return mas[i][j];
