@@ -14,8 +14,8 @@ public:
 	~Matrix();
 	void fill(const char*);
 	void show() const;
-	void rows();
-	void columns();
+	int rows();
+	int columns();
 	Matrix operator+(const Matrix&) const;
 	Matrix operator*(const Matrix&) const;
 };
