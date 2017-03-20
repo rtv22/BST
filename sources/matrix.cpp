@@ -92,3 +92,11 @@ Matrix Matrix::operator*(const Matrix& a) const {
 	}
 	return help;
 }
+
+void Matrix::rows() {
+	return row;
+}
+
+void Matrix::columns() {
+	return col;
+}
