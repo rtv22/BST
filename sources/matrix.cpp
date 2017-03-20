@@ -111,7 +111,7 @@ int Matrix::Element(int i, int j)
 
 bool Matrix::operator==(const Matrix& m) const
 {
-	if (row != m.row || column != m.column)
+	if (row != m.row || col != m.col)
 	{
 		return false;
 	}
@@ -120,6 +120,7 @@ bool Matrix::operator==(const Matrix& m) const
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
+			{
 		
 				if (mas[i][j] != m.mas[i][j])
 				{
