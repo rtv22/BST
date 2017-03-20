@@ -91,7 +91,7 @@ SCENARIO("matrix Proizv", "[Pro]") {
 	REQUIRE(matrix.Element(0,0) * matrix1.Element(0,0) + matrix.Element(1,0) * matrix1.Element(0,1) == 7);
 	REQUIRE(matrix.Element(0,0) * matrix1.Element(1,0) + matrix.Element(1,0) * matrix1.Element(1,1) == 10);
 	REQUIRE(matrix.Element(0,1) * matrix1.Element(0,0) + matrix.Element(1,1) * matrix1.Element(0,1) == 15);
-	REQUIRE(matrix.Element(0,1) * matrix1.Element(1,0) + matrix.Element(1,1) * matrix1.Element(1,1) == 7);
+	REQUIRE(matrix.Element(0,1) * matrix1.Element(1,0) + matrix.Element(1,1) * matrix1.Element(1,1) == 22);
 	
 	
 	
