@@ -101,7 +101,12 @@ int Matrix::columns() {
 	return col;
 }
 
-	int operator[](int x, int y) const {
-		return mas[x][y];
-	}
+int Element(int i, int j)
+        {
+            if (i<row && j<col)
+                return mas[i][j];
+            else
+                cout << "Error: 1";
+        }
+
 
