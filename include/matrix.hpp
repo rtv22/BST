@@ -11,6 +11,8 @@ public:
 	Matrix(int length = 4);
 	Matrix(int, int);
 	Matrix(const Matrix&);
+	
+        int Element(int i, int j)ж
 	~Matrix();
 	void fill(const char*);
 	void show() const;
