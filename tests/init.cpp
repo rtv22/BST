@@ -14,9 +14,9 @@ SCENARIO("matrix init without parametrs", "[init wp]") {
 }
 
 SCENARIO("matrix init with parametrs", "[init withp]") {
-	Matrix matrix(6,6);
-	REQUIRE(matrix.rows() == 6);
-	REQUIRE(matrix.columns() == 6);
+	Matrix matrix(2,2);
+	REQUIRE(matrix.rows() == 2);
+	REQUIRE(matrix.columns() == 2);
 	
 	for (int i=0;i<matrix.rows(); i++) {
 		for (int j = 0; j<matrix.columns();j++) {
@@ -26,7 +26,7 @@ SCENARIO("matrix init with parametrs", "[init withp]") {
 }
 
 SCENARIO("matrix init copy", "[init copy]") {
-	Matrix matrix(6,6);
+	Matrix matrix(2,2);
 	Matrix matrix1(matrix);
 	REQUIRE(matrix1.rows() == matrix.rows());
 	REQUIRE(matrix1.columns() == matrix.columns());
@@ -89,7 +89,7 @@ SCENARIO("matrix Proizv", "[Pro]") {
 	//sum.fill("sumfile.txt");
 	//sumfile.close();
 	REQUIRE(matrix.Element(0,0) * matrix1.Element(0,0) + matrix.Element(1,0) * matrix1.Element(0,1) == 7);
-	REQUIRE(matrix.Element(0,0) * matrix1.Element(1,0) + matrix.Element(1,0) * matrix1.Element(1,1) == 10);
+	REQUIRE(matrix.Element(0,0) * matrix1.Element(1,0) + matrix.Element(1,0) * matrix1.Element(1,1) == 15);
 	REQUIRE(matrix.Element(0,1) * matrix1.Element(0,0) + matrix.Element(1,1) * matrix1.Element(0,1) == 15);
 	REQUIRE(matrix.Element(0,1) * matrix1.Element(1,0) + matrix.Element(1,1) * matrix1.Element(1,1) == 22);
 	
