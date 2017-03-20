@@ -43,15 +43,27 @@ SCENARIO("matrix fill", "[fill]") {
 	ofstream test1("test1.txt");
 	test1 << "1 2 3 4";
 	test1.close();
+	matrix.fill("test1.txt");
 	REQUIRE(matrix[0][0] == 1);
 	REQUIRE(matrix[0][1] == 2);
 	REQUIRE(matrix[1][0] == 3);
 	REQUIRE(matrix[1][1] == 4);
 }
 
-/*SCENARIO("matrix sum", "[sum]") {
+SCENARIO("matrix sum", "[sum]") {
 	Matrix matrix(2,2);
-	Matrix matrix1(2,2);*/
+	Matrix matrix1(2,2);
+	Matrix sum(2,2);
+	
+	matrix.fill("test1.txt");
+	matrix1.fill("test1.txt");
+	ofstream sum("sum.txt");
+	sum << "2 4 6 8";
+	sum.fill("sum.txt")
+	REQUIRE(sum == matrix + matrix1);
+}
+	
+	
 	
 
 
