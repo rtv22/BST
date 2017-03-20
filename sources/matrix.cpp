@@ -100,3 +100,8 @@ int Matrix::rows() {
 int Matrix::columns() {
 	return col;
 }
+
+	int operator[](int x, int y) const {
+		return mas[x][y];
+	}
+
