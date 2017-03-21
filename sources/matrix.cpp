@@ -135,3 +135,15 @@ bool Matrix::operator==(const Matrix& m) const
 	return true;
 }
 
+Matrix Matrix::operator=(const Matrix& x)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			arr[i][j] = x.arr[i][j];
+		}
+	}
+	return *this;
+}
+
