@@ -147,3 +147,31 @@ Matrix Matrix::operator=(const Matrix& a) const
 	return *this;
 }
 
+istream& operator >> (std::istream& is, const Matrix& a) const
+{
+	for (int i = 0; i < a.row; i++)
+	{
+		for (int j = 0; j < a.col; j++)
+		{
+			cout << "mas[" << i << "][" << j << "] = ";
+			is >> a.mas[i][j];
+			cout << endl;
+		}
+	}
+	return is;
+}
+ostream& operator << (std::ostream& os, const Matrix& a) const
+{
+	for (int i = 0; i < a.row; i++)
+	{
+		for (int j = 0; j < a.col; j++)
+		{
+			os.width(4);
+			os << a.mas[i][j] << " ";
+		}
+		os << '\n';
+	}
+	os << std::endl;
+	return os;
+}
+
