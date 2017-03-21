@@ -22,6 +22,6 @@ public:
 	Matrix operator*(const Matrix&) const;
 	bool operator==(const Matrix&) const;
 	Matrix operator=(const Matrix& x) const;
-	friend istream& operator >> (istream& is, const Matrix& m) const;
-	friend ostream& operator << (std::ostream&, const Matrix&) const;
+	friend istream& operator >> (istream& is, Matrix& m);
+	friend ostream& operator << (std::ostream&, const Matrix&);
 };
