@@ -97,6 +97,47 @@ SCENARIO("matrix Proizv", "[Pro]") {
 	
 }
 	
+SCENARIO("matrix compare" , "[Comp]") {
+	Matrix matrix(2,2);
+	Matrix matrix1(2,2);
+	
+	ofstream test1("test1.txt");
+	test1 << "1 2 3 4";
+	test1.close();
+	
+	matrix.fill("test1.txt");
+	matrix1.fill("test1.txt");
+	
+	for (int i = 0; i<matrix.rows; i++) {
+		for (int j = 0; j<matrix.columns;j++) {
+			REQUIRE(matrix.Element(i,j) == matrix1.Element(i,j);
+				}
+			}
+	
+}
+	 
+
+SCENARIO("matrix compare" , "[Comp]") {
+	Matrix matrix(2,2);
+	Matrix matrix1(2,2);
+	
+	ofstream test1("test1.txt");
+	test1 << "1 2 3 4";
+	test1.close();
+	
+	matrix.fill("test1.txt");
+	for (int i = 0; i<matrix.rows; i++) {
+		for (int j = 0; j<matrix.columns;j++) {
+			matrix1.Element(i,j) = matrix.Element(i,j);
+				}
+			}
+	
+	REQUIRE(matrix1.Element(0,0) == 1);
+	REQUIRE(matrix1.Element(0,1) == 2);
+	REQUIRE(matrix1.Element(1,0) == 3);
+	REQUIRE(matrix1.Element(1,1) == 4);
+	
+}
 	
 	
 
