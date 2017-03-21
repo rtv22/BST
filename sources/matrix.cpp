@@ -135,15 +135,30 @@ bool Matrix::operator==(const Matrix& m) const
 	return true;
 }
 
-Matrix Matrix::operator=(const Matrix& a) const
+Matrix Matrix::operator=(const Matrix& a) 
 {
+	if (this == &a) {
+		return *this;
+	}
+
 	for (int i = 0; i < row; i++)
 	{
-		for (int j = 0; j < col; j++)
+		delete[] mas[i];
+	}
+	delete[] mas;
+
+
+	mas = new int*[a.row];
+	for (int i = 0; i < a.col; i++)
+	{
+		mas[i] = new int[a.col];
+		for (int j = 0; j < a.col; j++)
 		{
 			mas[i][j] = a.mas[i][j];
 		}
 	}
+	row = a.row;
+	col = a.col;
 	return *this;
 }
 
