@@ -147,7 +147,7 @@ Matrix Matrix::operator=(const Matrix& a) const
 	return *this;
 }
 
-istream& operator >> (std::istream& is, const Matrix& a) const
+istream& operator >> (std::istream& is, Matrix& a)
 {
 	for (int i = 0; i < a.row; i++)
 	{
@@ -160,7 +160,7 @@ istream& operator >> (std::istream& is, const Matrix& a) const
 	}
 	return is;
 }
-ostream& operator << (std::ostream& os, const Matrix& a) const
+ostream& operator << (std::ostream& os, const Matrix& a)
 {
 	for (int i = 0; i < a.row; i++)
 	{
