@@ -117,7 +117,7 @@ SCENARIO("matrix compare" , "[Comp]") {
 }
 	 
 
-SCENARIO("matrix compare" , "[Comp]") {
+SCENARIO("matrix prisv" , "[prisv]") {
 	Matrix matrix(2,2);
 	Matrix matrix1(2,2);
 	
