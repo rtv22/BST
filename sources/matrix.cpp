@@ -82,7 +82,7 @@ Matrix Matrix::operator+(const Matrix& a) const {
 
 Matrix Matrix::operator*(const Matrix& a) const {
 
-	Matrix help(row, col);
+	Matrix help(row, a.col);
 
 
 	for (int i = 0; i < row; i++) {
