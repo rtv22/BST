@@ -12,12 +12,12 @@ public:
 	Matrix(int, int);
 	Matrix(const Matrix&);
 	
-        int Element(int i, int j);
+        int Element(int i, int j) const;
 	~Matrix();
 	void fill(const char*);
 	void show() const;
-	int rows();
-	int columns();
+	int rows() const;
+	int columns() const;
 	Matrix operator+(const Matrix&) const;
 	Matrix operator*(const Matrix&) const;
 	bool operator==(const Matrix&) const;
