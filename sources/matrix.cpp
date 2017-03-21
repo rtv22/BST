@@ -135,13 +135,13 @@ bool Matrix::operator==(const Matrix& m) const
 	return true;
 }
 
-Matrix Matrix::operator=(const Matrix& x)
+Matrix Matrix::operator=(const Matrix& a) const
 {
 	for (int i = 0; i < row; i++)
 	{
-		for (int j = 0; j < column; j++)
+		for (int j = 0; j < col; j++)
 		{
-			arr[i][j] = x.arr[i][j];
+			mas[i][j] = a.mas[i][j];
 		}
 	}
 	return *this;
