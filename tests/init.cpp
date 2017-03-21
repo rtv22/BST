@@ -126,11 +126,7 @@ SCENARIO("matrix compare" , "[Comp]") {
 	test1.close();
 	
 	matrix.fill("test1.txt");
-	for (int i = 0; i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			matrix1.Element(i,j) = matrix.Element(i,j);
-				}
-			}
+	matrix1 = matrix;
 	
 	REQUIRE(matrix1.Element(0,0) == 1);
 	REQUIRE(matrix1.Element(0,1) == 2);
