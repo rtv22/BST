@@ -21,4 +21,5 @@ public:
 	Matrix operator+(const Matrix&) const;
 	Matrix operator*(const Matrix&) const;
 	bool operator==(const Matrix&) const;
+	Matrix operator=(const Matrix& x) const;
 };
