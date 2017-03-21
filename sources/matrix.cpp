@@ -69,7 +69,7 @@ void Matrix::show() const {
 
 Matrix Matrix::operator+(const Matrix& a) const {
 
-	Matrix help(row, col);
+	Matrix help(row, a.col);
 
 
 	for (int i = 0; i < row; i++) {
@@ -96,15 +96,15 @@ Matrix Matrix::operator*(const Matrix& a) const {
 	return help;
 }
 
-int Matrix::rows() {
+int Matrix::rows() const {
 	return row;
 }
 
-int Matrix::columns() {
+int Matrix::columns() const {
 	return col;
 }
 
-int Matrix::Element(int i, int j)
+int Matrix::Element(int i, int j) const
         {
             if (i<row && j<col)
                 return mas[i][j];
