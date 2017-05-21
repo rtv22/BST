@@ -1,6 +1,6 @@
 # matrix
 
-[![Build Status](https://travis-ci.org/Bozey98/matrix.svg?branch=master)](https://travis-ci.org/Bozey98/matrix)
+[![Build Status](https://travis-ci.org/Bozey98/BST.svg?branch=master)](https://travis-ci.org/Bozey98/BST)
 
 matrix methods:
 - [x] rows
