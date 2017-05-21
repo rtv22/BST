@@ -1,140 +1,112 @@
-#include <matrix.hpp>
+#include <BST.h>
 #include <catch.hpp>
+#include <fstream>
 
-SCENARIO("matrix init without parametrs", "[init wp]") {
-	Matrix matrix;
-	REQUIRE(matrix.rows() == 4);
-	REQUIRE(matrix.columns() == 4);
-	
-	for (int i=0;i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix.Element(i,j) == 0);
-		}
-	}
-}
+SCENARIO ("init", "[init]")
 
-SCENARIO("matrix init with parametrs", "[init withp]") {
-	Matrix matrix(2,2);
-	REQUIRE(matrix.rows() == 2);
-	REQUIRE(matrix.columns() == 2);
-	
-	for (int i=0;i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix.Element(i,j) == 0);
-		}
-	}
+{
+
+  Tree<int> test;
+
+  REQUIRE(test.getroot() == nullptr);
+  REQUIRE(test.getcount() == 0);
+
 }
 
-SCENARIO("matrix init copy", "[init copy]") {
-	Matrix matrix(2,2);
-	Matrix matrix1(matrix);
-	REQUIRE(matrix1.rows() == matrix.rows());
-	REQUIRE(matrix1.columns() == matrix.columns());
-	
-	for (int i=0;i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix.Element(i,j) == matrix1.Element(i,j));
-		}
-	}
+SCENARIO("insert", "[init]")
+
+{
+
+  Tree<int> test;
+
+  test.add(10);
+
+  REQUIRE(test.find_node(5, test.getroot()) == true);
+
 }
 
-SCENARIO("matrix fill", "[fill]") {
-	Matrix matrix(2,2);
-	ofstream test1("test1.txt");
-	test1 << "1 2 3 4";
-	test1.close();
-	matrix.fill("test1.txt");
-	REQUIRE(matrix.Element(0,0) == 1);
-	REQUIRE(matrix.Element(0,1) == 2);
-	REQUIRE(matrix.Element(1,0) == 3);
-	REQUIRE(matrix.Element(1,1) == 4);
+SCENARIO("find_node", "[init]")
+
+{
+
+  Tree<int> test;
+
+  test.add(10);
+
+  REQUIRE(test.find_node(10, test.getroot()) != nullptr);
+
+  REQUIRE(test.find_node(10, test.getroot()) == true);
+
 }
 
-SCENARIO("matrix sum", "[sum]") {
-	Matrix matrix(2,2);
-	Matrix matrix1(2,2);
-	Matrix sum(2,2);
+SCENARIO("get root", "[init]")
+
+{
+
+  Tree<int> test;
+
+  test.add(10);
 	
-	ofstream test1("test1.txt");
-	test1 << "1 2 3 4";
-	test1.close();
-	
-	matrix.fill("test1.txt");
-	matrix1.fill("test1.txt");
-	//ofstream sumfile("sumfile.txt");
-	//sumfile << "2 4 6 8";
-	//sum.fill("sumfile.txt");
-	//sumfile.close();
-	REQUIRE(matrix.Element(0,0) + matrix1.Element(0,0) == 2);
-	REQUIRE(matrix.Element(0,1) + matrix1.Element(0,1) == 4);
-	REQUIRE(matrix.Element(1,0) + matrix1.Element(1,0) == 6);
-	REQUIRE(matrix.Element(1,1) + matrix1.Element(1,1) == 8);
-		
-	
+  REQUIRE(test.getcount() == 1);
+
+  REQUIRE(test.getroot() != 0);
+
 }
 
-SCENARIO("matrix Proizv", "[Pro]") {
-	Matrix matrix(2,2);
-	Matrix matrix1(2,2);
-	Matrix Pro(2,2);
-	
-	ofstream test1("test1.txt");
-	test1 << "1 2 3 4";
-	test1.close();
-	
-	matrix.fill("test1.txt");
-	matrix1.fill("test1.txt");
-	//ofstream sumfile("sumfile.txt");
-	//sumfile << "2 4 6 8";
-	//sum.fill("sumfile.txt");
-	//sumfile.close();
-	REQUIRE(matrix.Element(0,0) * matrix1.Element(0,0) + matrix.Element(1,0) * matrix1.Element(0,1) == 7);
-	REQUIRE(matrix.Element(0,1) * matrix1.Element(0,0) + matrix.Element(1,1) * matrix1.Element(0,1) == 10);
-	REQUIRE(matrix.Element(0,0) * matrix1.Element(1,0) + matrix.Element(1,0) * matrix1.Element(1,1) == 15);
-	REQUIRE(matrix.Element(0,1) * matrix1.Element(1,0) + matrix.Element(1,1) * matrix1.Element(1,1) == 22);
-	
-	
-	
-}
-	
-SCENARIO("matrix compare" , "[Comp]") {
-	Matrix matrix(2,2);
-	Matrix matrix1(2,2);
-	
-	ofstream test1("test1.txt");
-	test1 << "1 2 3 4";
-	test1.close();
-	
-	matrix.fill("test1.txt");
-	matrix1.fill("test1.txt");
-	
-	for (int i = 0; i<matrix.rows(); i++) {
-		for (int j = 0; j<matrix.columns();j++) {
-			REQUIRE(matrix.Element(i,j) == matrix1.Element(i,j));
-				}
-			}
-	
-}
-	 
 
-SCENARIO("matrix prisv" , "[prisv]") {
-	Matrix matrix(2,2);
-	Matrix matrix1(2,2);
-	
-	ofstream test1("test1.txt");
-	test1 << "1 2 3 4";
-	test1.close();
-	
-	matrix.fill("test1.txt");
-	matrix1 = matrix;
-	
-	REQUIRE(matrix1.Element(0,0) == 1);
-	REQUIRE(matrix1.Element(0,1) == 2);
-	REQUIRE(matrix1.Element(1,0) == 3);
-	REQUIRE(matrix1.Element(1,1) == 4);
-	
+SCENARIO ("read/write", "[init]")
+
+{
+
+    Tree<int> test1;
+    test1.read("File1.txt");
+    bool isCatched = false;
+  
+  try
+    {
+      test1.write("File2.txt");
+    }
+    
+    catch(bool isCatched)
+    {
+      isCatched = true;
+      throw std::logic_error ("Error.");
+    }
+   
+  REQUIRE(isCatched == false); 
+
+  Tree<int> test2;
+
+  test2.read("File2.txt");
+
+  REQUIRE(test1.getcount() == test2.getcount());
+
 }
-	
+
+SCENARIO("deleteX")
+
+{
+
+  Tree<int> test;
+
+  test.add(1);
+
+  test.add(2);
+
+  test.add(3);
+
+  test.del(1);
+
+  test.del(2);
+
+  REQUIRE(test.find_node(1, test.getroot())== false);
+  REQUIRE(test.find_node(2, test.getroot())== false);
+
+  REQUIRE(test.find_node(3, test.getroot())== true);
+
+  REQUIRE(test.getcount() == 1);
+
+}
 	
 
 
