@@ -169,6 +169,6 @@ Node<T>* BST<T>::del(Node<T> *Tree, T el) {
 		if (Tree->left != nullptr) Tree = Tree->left;
 		else Tree = Tree->right;
 	}
-
+	count--;
 	return Tree;
 }
