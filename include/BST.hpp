@@ -133,7 +133,7 @@ template <typename T> Node<T>* BST<T>::MinElement(Node<T>* min) {
 
 
 
-template <typename T>
+/*template <typename T>
 Node<T>* BST<T>::del(Node<T> *Tree, T el) {
 	if (Tree == nullptr) return Tree;
 	if (el < Tree->element) Tree->left = del(Tree->left, el);
@@ -148,4 +148,4 @@ Node<T>* BST<T>::del(Node<T> *Tree, T el) {
 	}
 	count--;
 	return Tree;
-}
+}*/
