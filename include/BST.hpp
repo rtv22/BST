@@ -26,7 +26,7 @@ public:
 	void output(const string file);
 	Node<T>* MinElement(Node<T>* min);
 	Node<T>* getroot();
-	Node<T>* getcount();
+	int getcount() const;
 	Node<T>* del(Node<T> *Tree, T el);
 
 
@@ -102,7 +102,7 @@ template <typename T> Node<T>* BST<T>::getroot() {
 	return root;
 }
 
-template <typename T> Node<T>* BST<T>::getcount() {
+template <typename T> int BST<T>::getcount() const {
 	return count;
 }
 
