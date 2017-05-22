@@ -33,7 +33,7 @@ SCENARIO("find_node", "[init]")
 
   test.add(10);
 
-  REQUIRE(test.search(10, test.getroot()) != nullptr);
+  REQUIRE(test.search(10, test.getroot()) != false);
 
   REQUIRE(test.search(10, test.getroot()) == true);
 
