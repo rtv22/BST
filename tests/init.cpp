@@ -63,7 +63,7 @@ SCENARIO("del", "[init]")
   test.add(1);
   test.add(2);
   test.add(3);
-  test.del(test.getroot(), 2);
+  test.deleteVal(2);
   REQUIRE(test.search(2, test.getroot()) == false);
   REQUIRE(test.search(3, test.getroot()) == true);
 
