@@ -21,7 +21,7 @@ SCENARIO("insert", "[init]")
 
   test.add(10);
 
-  REQUIRE(test.find_node(5, test.getroot()) == true);
+  REQUIRE(test.search(5, test.getroot()) == true);
 
 }
 
@@ -33,9 +33,9 @@ SCENARIO("find_node", "[init]")
 
   test.add(10);
 
-  REQUIRE(test.find_node(10, test.getroot()) != nullptr);
+  REQUIRE(test.search(10, test.getroot()) != nullptr);
 
-  REQUIRE(test.find_node(10, test.getroot()) == true);
+  REQUIRE(test.search(10, test.getroot()) == true);
 
 }
 
@@ -99,10 +99,10 @@ SCENARIO("deleteX")
 
   test.del(2);
 
-  REQUIRE(test.find_node(1, test.getroot())== false);
-  REQUIRE(test.find_node(2, test.getroot())== false);
+  REQUIRE(test.search(1, test.getroot())== false);
+  REQUIRE(test.search(2, test.getroot())== false);
 
-  REQUIRE(test.find_node(3, test.getroot())== true);
+  REQUIRE(test.search(3, test.getroot())== true);
 
   REQUIRE(test.getcount() == 1);
 
