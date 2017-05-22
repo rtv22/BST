@@ -55,7 +55,7 @@ SCENARIO("get root", "[init]")
 
 
 
-SCENARIO("deleteX")
+SCENARIO("del" "[init]")
 
 {
 
