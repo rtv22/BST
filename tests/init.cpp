@@ -76,8 +76,6 @@ SCENARIO("deleteX")
 
   REQUIRE(test.search(3, test.getroot())!= 0);
 
-  REQUIRE(test.getcount() == 1);
-
 }
 	
 
