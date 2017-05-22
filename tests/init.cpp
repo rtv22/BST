@@ -59,12 +59,12 @@ SCENARIO ("read/write", "[init]")
 {
 
     BST<int> test1;
-    test1.read("File1.txt");
+    test1.input("File1.txt");
     bool isCatched = false;
   
   try
     {
-      test1.write("File2.txt");
+      test1.output("File2.txt");
     }
     
     catch(bool isCatched)
@@ -77,7 +77,7 @@ SCENARIO ("read/write", "[init]")
 
   BST<int> test2;
 
-  test2.read("File2.txt");
+  test2.input("File2.txt");
 
   REQUIRE(test1.getcount() == test2.getcount());
 
@@ -95,9 +95,9 @@ SCENARIO("deleteX")
 
   test.add(3);
 
-  test.del(1);
+  test.del(test.getroot(), 1);
 
-  test.del(2);
+  test.del(test.getroot(), 2);
 
   REQUIRE(test.search(1, test.getroot())== false);
   REQUIRE(test.search(2, test.getroot())== false);
