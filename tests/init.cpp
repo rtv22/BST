@@ -6,7 +6,7 @@ SCENARIO ("init", "[init]")
 
 {
 
-  Tree<int> test;
+  BST<int> test;
 
   REQUIRE(test.getroot() == nullptr);
   REQUIRE(test.getcount() == 0);
@@ -17,7 +17,7 @@ SCENARIO("insert", "[init]")
 
 {
 
-  Tree<int> test;
+  BST<int> test;
 
   test.add(10);
 
@@ -29,7 +29,7 @@ SCENARIO("find_node", "[init]")
 
 {
 
-  Tree<int> test;
+  BST<int> test;
 
   test.add(10);
 
@@ -43,7 +43,7 @@ SCENARIO("get root", "[init]")
 
 {
 
-  Tree<int> test;
+  BST<int> test;
 
   test.add(10);
 	
@@ -58,7 +58,7 @@ SCENARIO ("read/write", "[init]")
 
 {
 
-    Tree<int> test1;
+    BST<int> test1;
     test1.read("File1.txt");
     bool isCatched = false;
   
@@ -75,7 +75,7 @@ SCENARIO ("read/write", "[init]")
    
   REQUIRE(isCatched == false); 
 
-  Tree<int> test2;
+  BST<int> test2;
 
   test2.read("File2.txt");
 
@@ -87,7 +87,7 @@ SCENARIO("deleteX")
 
 {
 
-  Tree<int> test;
+  BST<int> test;
 
   test.add(1);
 
