@@ -55,7 +55,7 @@ SCENARIO("get root", "[init]")
 
 
 
-SCENARIO("del", "[init]")
+/*SCENARIO("del", "[init]")
 
 {
 
@@ -76,7 +76,7 @@ SCENARIO("del", "[init]")
 
   REQUIRE(test.search(3, test.getroot())!= 0);
 
-}
+}*/
 	
 
 
