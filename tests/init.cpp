@@ -54,34 +54,6 @@ SCENARIO("get root", "[init]")
 }
 
 
-SCENARIO ("read/write", "[init]")
-
-{
-
-    BST<int> test1;
-    test1.input("File1.txt");
-    bool isCatched = false;
-  
-  try
-    {
-      test1.output("File2.txt");
-    }
-    
-    catch(bool isCatched)
-    {
-      isCatched = true;
-      throw std::logic_error ("Error.");
-    }
-   
-  REQUIRE(isCatched == false); 
-
-  BST<int> test2;
-
-  test2.input("File2.txt");
-
-  REQUIRE(test1.getcount() == test2.getcount());
-
-}
 
 SCENARIO("deleteX")
 
