@@ -55,28 +55,19 @@ SCENARIO("get root", "[init]")
 
 
 
-/*SCENARIO("del", "[init]")
+SCENARIO("del", "[init]")
 
 {
 
   BST<int> test;
-
   test.add(1);
-
   test.add(2);
-
   test.add(3);
-
-  test.del(test.getroot(), 1);
-
   test.del(test.getroot(), 2);
+  REQUIRE(test.search(2, test.getroot()) == false);
+  REQUIRE(test.search(3, test.getroot()) == true);
 
-  REQUIRE(test.search(1, test.getroot()) != 0);
-  REQUIRE(test.search(2, test.getroot()) == 0);
-
-  REQUIRE(test.search(3, test.getroot())!= 0);
-
-}*/
+}
 	
 
 
