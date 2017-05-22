@@ -19,6 +19,8 @@ private:
 	int count;
 public:
 	BST();
+	~BST();
+	void deleteNode(Node<T>* temp);
 	void show(ostream&cout, Node<T> *Tree);
 	void add(const T&);
 	bool search(const T&, Node<T> *Tree);
@@ -34,8 +36,33 @@ public:
 
 
 template <typename T> BST<T>::BST() {
-	root = NULL;
+	root = nullptr;
 	count = 0;
+}
+
+template <typename T>
+BST<T>::~BST()
+{
+	deleteNode(root);
+}
+
+template<typename T>
+void BST<T>::deleteNode(Node<T>* temp)
+{
+	if (!temp)
+		return;
+	if (temp->left)
+	{
+		deleteNode(temp->left);
+		temp->left = nullptr;
+	}
+
+	if (temp->right)
+	{
+		deleteNode(temp->right);
+		temp->right = nullptr;
+	}
+	delete temp;
 }
 
 template <typename T> void BST<T>::show(ostream&cout, Node<T> *Tree) {
@@ -133,8 +160,9 @@ template <typename T> Node<T>* BST<T>::MinElement(Node<T>* min) {
 
 
 
-/*template <typename T>
-Node<T>* BST<T>::del(Node<T> *Tree, T el) {
+template <typename T>
+Node<T>* BST<T>::del(Node<T> *Tree, T el) 
+{
 	if (Tree == nullptr) return Tree;
 	if (el < Tree->element) Tree->left = del(Tree->left, el);
 	else if (el > Tree->element) Tree->right = del(Tree->right, el);
@@ -148,4 +176,4 @@ Node<T>* BST<T>::del(Node<T> *Tree, T el) {
 	}
 	count--;
 	return Tree;
-}*/
+}
