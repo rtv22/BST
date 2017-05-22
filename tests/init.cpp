@@ -55,7 +55,7 @@ SCENARIO("get root", "[init]")
 
 
 
-SCENARIO("del" "[init]")
+SCENARIO("del", "[init]")
 
 {
 
