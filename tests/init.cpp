@@ -1,4 +1,4 @@
-#include <BST.h>
+#include <BST.hpp>
 #include <catch.hpp>
 #include <fstream>
 
