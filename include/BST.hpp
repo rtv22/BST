@@ -162,7 +162,7 @@ template<typename T>
 bool BST<T>::remove_element(Node<T>* parent, Node<T>* current, const T& val)
 {
 	if (!current) return false;
-	if (current->data == val)
+	if (current->element == val)
 	{
 		if (current->left == NULL || current->right == NULL) {
 			Node<T>* temp = current->left;
@@ -184,16 +184,16 @@ bool BST<T>::remove_element(Node<T>* parent, Node<T>* current, const T& val)
 			while (validSubs->left) {
 				validSubs = validSubs->left;
 			}
-			T temp = current->data;
-			current->data = validSubs->data;
-			validSubs->data = temp;
+			T temp = current->element;
+			current->element = validSubs->element;
+			validSubs->element = temp;
 			return remove_element(current, current->right, temp);
 		}
 		delete current;
 		count--;
 		return true;
 	}
-	if (current->data > val)
+	if (current->element > val)
 		return remove_element(current, current->left, val);
 	else
 		return remove_element(current, current->right, val);
