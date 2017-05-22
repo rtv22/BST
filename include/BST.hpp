@@ -33,29 +33,6 @@ public:
 };
 
 
-int main() {
-	system("chcp 1251");
-
-	BST<int> MyTree;
-	char file1[20] = "File1.txt";
-	char file2[20] = "File2.txt";
-	MyTree.input(file1);
-	MyTree.show(cout, MyTree.getroot());
-	MyTree.output(file2);
-	if (MyTree.search(10, MyTree.getroot()) == true) {
-		cout << "Элемент найден" << endl;
-	}
-	else cout << "Элемент не найден" << endl;
-	MyTree.del(MyTree.getroot(), 4);
-	MyTree.show(cout, MyTree.getroot());
-
-
-
-	system("pause");
-
-	return 0;
-}
-
 template <typename T> BST<T>::BST() {
 	root = NULL;
 	count = 0;
