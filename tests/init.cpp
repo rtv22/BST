@@ -21,7 +21,7 @@ SCENARIO("insert", "[init]")
 
   test.add(10);
 
-  REQUIRE(test.search(5, test.getroot()) == true);
+  REQUIRE(test.search(10, test.getroot()) == true);
 
 }
 
